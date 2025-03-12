@@ -1,7 +1,6 @@
 /* ===========================
     General Styles
 ============================ */
-
 *, :after, :before{
   box-sizing: border-box;
 }
