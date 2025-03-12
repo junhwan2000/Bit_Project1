@@ -22,13 +22,13 @@
                                 div_QnA.setAttribute("id","QnA"+i);
                                 div_QnA.innerText=i+"번 문제 설정\n";
                                 let text_Q = document.createElement("input");
-                                text_Q.setAttribute("id","Q"+i);
+                                text_Q.setAttribute("name","Q");
                                 text_Q.setAttribute("type","text");
                                 text_Q.setAttribute("required","true");
                                 text_Q.setAttribute("placeholder","문제를 입력하세요.");
 
                                 let text_A = document.createElement("input");
-                                text_A.setAttribute("id","A"+i);
+                                text_A.setAttribute("name","A");
                                 text_A.setAttribute("type","text");
                                 text_A.setAttribute("required","true");
                                 text_A.setAttribute("placeholder","정답을 입력하세요.");
@@ -60,7 +60,7 @@
             <input type="button" value="확인" id="button_Qnum">
         </form>
         <p> 출제할 문항 수를 입력하면 하단에 문제와 정답을 입력하는 양식이 출력됩니다. </p>
-        <form name="form_Questions" action="ShowSetGame.html" method="post">
+        <form name="form_Questions" action="ShowSetGame.jsp" method="post">
             
         </form>
 
