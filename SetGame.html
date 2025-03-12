@@ -20,17 +20,18 @@
                             for(let i=1; i<=in_Qnum.value; i++){
                                 let div_QnA = document.createElement("div");
                                 div_QnA.setAttribute("id","QnA"+i);
-                                div_QnA.innerText=i+"번\n";
-
+                                div_QnA.innerText=i+"번 문제 설정\n";
                                 let text_Q = document.createElement("input");
                                 text_Q.setAttribute("id","Q"+i);
                                 text_Q.setAttribute("type","text");
                                 text_Q.setAttribute("required","true");
+                                text_Q.setAttribute("placeholder","문제를 입력하세요.");
 
                                 let text_A = document.createElement("input");
                                 text_A.setAttribute("id","A"+i);
                                 text_A.setAttribute("type","text");
                                 text_A.setAttribute("required","true");
+                                text_A.setAttribute("placeholder","정답을 입력하세요.");
 
                                 div_QnA.appendChild(text_Q);
                                 div_QnA.appendChild(text_A);
@@ -42,21 +43,15 @@
                                 btn_setQnA.setAttribute("id", "button_setQnA");
                                 btn_setQnA.innerText="입력 완료";
                                 btn_setQnA.setAttribute("style","display:block");
-                                btn_setQnA.setAttribute("onclick","test()");
 
                                 fm_Questions.appendChild(btn_setQnA);
-                                event.preventDefault();
                             }
                             else{
                                 alert("1이상의 숫자를 입력하세요");
                             }
                         });
-
-                    
                 });
-                function test(){
-                        alert("입력완료!!");
-                    }
+
         </script>
     </head>
     <body>
@@ -65,7 +60,7 @@
             <input type="button" value="확인" id="button_Qnum">
         </form>
         <p> 출제할 문항 수를 입력하면 하단에 문제와 정답을 입력하는 양식이 출력됩니다. </p>
-        <form name="form_Questions">
+        <form name="form_Questions" action="ShowSetGame.html" method="post">
             
         </form>
 
