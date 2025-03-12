@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Game Setting for Administer Page</title>
+        <h3>게임 문제 및 정답 설정 페이지</h3>
+        <script type="text/javascript">
+            window.addEventListener(
+                "DOMContentLoaded", (event)=>{
+
+                    let btn_Qnum = document.getElementById("button_Qnum");
+                    btn_Qnum.addEventListener(
+                        "click", (event)=>{
+                            let fm_Questions = document.querySelector("form[name='form_Questions']");
+                            let in_Qnum = document.getElementById("input_Qnum");
+                            
+                            fm_Questions.innerHTML="";
+                           // document.getElementById("button_setQnA").style.display = "none";
+                            if(parseInt(in_Qnum.value) > 0){
+                            for(let i=1; i<=in_Qnum.value; i++){
+                                let div_QnA = document.createElement("div");
+                                div_QnA.setAttribute("id","QnA"+i);
+                                div_QnA.innerText=i+"번\n";
+
+                                let text_Q = document.createElement("input");
+                                text_Q.setAttribute("id","Q"+i);
+                                text_Q.setAttribute("type","text");
+                                text_Q.setAttribute("required","true");
+
+                                let text_A = document.createElement("input");
+                                text_A.setAttribute("id","A"+i);
+                                text_A.setAttribute("type","text");
+                                text_A.setAttribute("required","true");
+
+                                div_QnA.appendChild(text_Q);
+                                div_QnA.appendChild(text_A);
+                                fm_Questions.appendChild(div_QnA);
+
+                                }
+                                let btn_setQnA = document.createElement("button");
+                                btn_setQnA.setAttribute("type", "submit");
+                                btn_setQnA.setAttribute("id", "button_setQnA");
+                                btn_setQnA.innerText="입력 완료";
+                                btn_setQnA.setAttribute("style","display:block");
+                                btn_setQnA.setAttribute("onclick","test()");
+
+                                fm_Questions.appendChild(btn_setQnA);
+                                event.preventDefault();
+                            }
+                            else{
+                                alert("1이상의 숫자를 입력하세요");
+                            }
+                        });
+
+                    
+                });
+                function test(){
+                        alert("입력완료!!");
+                    }
+        </script>
+    </head>
+    <body>
+        <form name="form_Qnum">
+            출제할 문항 수 : <input type="text" id="input_Qnum">
+            <input type="button" value="확인" id="button_Qnum">
+        </form>
+        <p> 출제할 문항 수를 입력하면 하단에 문제와 정답을 입력하는 양식이 출력됩니다. </p>
+        <form name="form_Questions">
+            
+        </form>
+
+    </body>
+
+</html>
