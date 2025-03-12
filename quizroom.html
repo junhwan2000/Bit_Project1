@@ -69,6 +69,7 @@
             border: 2px solid black;
             padding: 10px;
             background: white;
+            width: 30%
         }
         .chatbox {
             position: absolute;
@@ -90,8 +91,7 @@
     <div class="quiz-container">
     
         <div class="timer"> 
-        <p>Timer: </p>
-        <p id="timeout">100</p>
+        Timer: <span id="timeout"></span>
         </div>
         <div class="question">문제 1</div>
         <div class="options">
@@ -106,7 +106,7 @@
     </div>
 
     <script>
-        let time=10;
+        let time=100;
 	   let inter= setInterval(
 	    		() => { 
 	    			if(time>=0)
