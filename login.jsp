@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
- <h2> Team 과일 Login </h2>
  
  <html>
 	<head> 
@@ -11,26 +9,25 @@
 	</head>
 	<body>
 		 <div align="center">
-			로고 위치
+			<!-- 로고 위치 -->
 		 </div>
 		 
 		 <br>
 		 
 		 <div>
-		 	<form method="post" action="join.jsp">
-		 		<p class="who">
+		 	<form method="post" action="memberCheck.jsp">
 				 	<table>
 				 		<tr>
 				 			<th> 회원 아이디 </th>
 				 		</tr>
 						<tr align="center">
-							<td> <input type="text" name="id" placeholder="ID" class="input"> </td>
+							<td> <input type="text" name="id" autofocus
+								placeholder="ID" class="input"> </td>
 						</tr>
 						<tr align="center">
 				 			<td> <input type="text" name="passwd" placeholder="Password" class="input"> </td>
 				 		</tr>
 				 	</table> 
-			 	</p> 
 			 <div>
 			 	<table>
 			 		<tr>

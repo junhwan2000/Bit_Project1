@@ -1,0 +1,76 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<h2> 회원관리 </h2>
+<%
+	String id = request.getParameter( "id" );
+	String passwd = request.getParameter( "passwd" );
+%>
+<%
+	Connection con = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+	try {
+		// 드라이버 로딩
+		Class.forName( "oracle.jdbc.driver.OracleDriver" );
+		%>
+		드라이버 로딩 성공 <br>
+		<%
+		// DB 연결
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String dbid = "bit";
+		String dbpasswd = "bit";
+		con = DriverManager.getConnection( url, dbid, dbpasswd );
+		%>
+		DB 연결 성공 <br>
+		<%
+		// Statement 생성
+		stmt = con.createStatement();
+		String sql = null;
+		if( id == null || id.equals( "" ) || passwd == null || passwd.equals( "" ) ) {
+			// 출력용
+			sql = "select * from member";
+		} else {
+			sql = "select * from dbtest where id='"+id+"'";
+		}
+		
+		rs = stmt.executeQuery( sql );
+		%>
+		<table border="1">
+			<tr>
+				<th> 아이디 </th>
+				<th> 비밀번호 </th>
+				<th> 닉네임 </th>
+				<th> 전화번호 </th>
+			</tr>
+			<%
+			while( rs.next() ) {	// boolean 값으로 주니 없을 때까지 true 로 자동 실행
+				%>
+				<tr>
+					<td><%=rs.getString( "id" )%></td>
+					<td><%=rs.getString( "passwd" )%></td>
+					<td><%=rs.getString( "nickname" )%></td>
+					<td><%=rs.getString( "tel" )%></td>
+				</tr>
+				<%
+			}
+			%>
+		</table>
+		<%
+	} catch( SQLException e ) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if( rs != null ) rs.close();
+			if( stmt != null ) stmt.close();
+			if( con != null ) con.close();
+		} catch( SQLException e ) {
+			e.printStackTrace();
+		}
+	}
+%>
