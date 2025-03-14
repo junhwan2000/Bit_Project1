@@ -32,20 +32,27 @@
 		%>
 		DB 연결 성공 <br>
 		<%
-		String sql = "SELECT id FROM member WHERE id = '"+id+"' and passwd = '"+passwd+"'";
-		if ( sql != null ) {
+		String sql = "select * from member where id = '"+id+"' and passwd = '"+passwd+"'";
+		stmt = con.createStatement();
+		rs = stmt.executeQuery( sql );
+		if ( rs.next() ) {
 			%>
 			<script> alert( "로그인 성공" ); </script>
 			<%
 		} else {
 			%>
-			<script> alert( "회원정보가 없습니다." ); </script>
+			<script type="text/javascript"> 
+				alert( "회원정보가 없습니다." ); 
+				history.back();
+			</script>
 			<%
 		}
 	} catch ( SQLException e ) {
 		e.printStackTrace();
 		%>
 		로그인에 실패했습니다. <br>
+		잠시 후 다시 시도해주세요. <br>
+		<meta http-equiv="refresh" content="3;url=login.jsp">
 		<%
 	} finally {
 		try {

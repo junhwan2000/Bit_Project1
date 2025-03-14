@@ -53,7 +53,7 @@
 			 	</table>
 		 	</form>
 		 	
-		 	<form method="post" action="signup.jsp">
+		 	<form method="post" action="signUpForm.jsp">
 			 	<div align="center">
 			 		<tr align="center">
 			 			<td td colspan="2"> 과일 Quiz에 처음 참가하시나요? </td>
