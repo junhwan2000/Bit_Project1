@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
@@ -5,6 +6,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="setting.jsp"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -89,22 +91,13 @@
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <button>문제 1</button>
-        <button>문제 2</button>
-        <button>문제 3</button>
-        <button>문제 4</button>
-    </div>
-    <div class="quiz-container">
-    
-        <div class="timer"> 
-        Timer: <span id="timeout"></span>
-        </div>
-       <div class="question">
-       	<%
-		    Connection con = null;
+<% Connection con = null;
 		    Statement stmt = null;
 		    ResultSet rs = null;
+		    ArrayList<String> problem = new ArrayList<String>();
+		    ArrayList<String> answer = new ArrayList<String>();
+		    int cnt = 0;
+            int i=0;
        		try{
        			Class.forName("oracle.jdbc.driver.OracleDriver");
        		// DB 연결
@@ -113,13 +106,15 @@
        	        String dbpasswd = "bit";
        	        con = DriverManager.getConnection(url, dbid, dbpasswd);
        	     	stmt = con.createStatement();
-	       	     String sql = "SELECT question FROM qna WHERE qid = 1"; // qid가 1인 문제 가져오기
+       	     	
+	       	     String sql = "SELECT * FROM "+ qna_db; 
 	             rs = stmt.executeQuery(sql);
-	             if (rs.next()) {
-	                 out.print(rs.getString("question"));
-	             } else {
-	                 out.print("문제가 없습니다.");
-	             }
+	             
+	       	     while(rs.next()){
+	       	    	      problem.add(rs.getString("problem"));
+	       	    	      answer.add(rs.getString("answer"));
+	       	     }
+	       	 
        		}catch(SQLException e){
        			e.printStackTrace();
        		}finally {
@@ -130,9 +125,20 @@
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-            }
+            }%>
+    <div class="sidebar">
+    <p name="p0">문제1</p>
+    <p name="p1">문제2</p>
+    <p name="p2">문제3</p>
+    <p name="p3">문제4</p>
        
-       %>
+    </div>
+    <div class="quiz-container">
+    
+        <div class="timer"> 
+        Timer: <span id="timeout"></span>
+        </div>
+       <div class="question">
        </div>
         <div class="options">
             <div class="option" onclick="checkAnswer(true)">O</div>
@@ -145,29 +151,59 @@
         <p>Guest 2</p>
     </div>
     <script>
-    let time = 10; // 타이머 시작 (10초)
-    let inter= setInterval(
-    		() => { 
-    			if(time>=0)
-    				document.getElementById("timeout").innerText=time--;
-    			else
-    				{
-    				alert("끝났습니다 다음문제"); 
-    				clearInterval(inter);
-    				}
-    		},
-    		1000	
-    		);
-        function checkAnswer(isCorrect) {
-            const result = document.getElementById('result');
-            if (isCorrect) {
-                result.textContent = "정답입니다!";
-                result.style.color = "green";
-            } else {
-                result.textContent = "틀렸습니다. 다시 시도해보세요!";
-                result.style.color = "red";
-            }
-        }
+    window.addEventListener(
+    		"DOMContentLoaded", ()=>{
+        		let time = 10;
+    			
+    			/*for( let i=0; i<<%=problem.size()%>; i++ ) {
+    				
+    				
+    			     let quiz = document.querySelector("div[class='question']");
+	    			 quiz.innerText = "";
+	    			 quiz.innerText = "<%=problem.get(i)%>";
+	    			 
+	    		  	
+    			}*/
+
+    			 let inter = setInterval( () =>timer(inter),1000);
+    			let num = <%=problem.size()%>
+    			let cnt=0;
+    			function timer(inter){
+    			
+	  			let quiz = document.querySelector("div[class='question']");
+   			    quiz.innerText = "";
+   			    quiz.innerText = "<%=problem.get(cnt)%>"; 
+   			    <%=cnt%>++;
+	  			if(time>=0)
+	    				document.getElementById("timeout").innerText=time--;
+	  			else if(cnt==num-1)
+	  				{
+	  				alert("모든 문제가 끝났습니다.");
+	  				clearInterval(inter);
+	  			
+	  				}
+	    			else
+	    				{
+	    				cnt++;
+	    				alert(cnt+"끝났습니다 다음문제");
+	    				time=10;
+	    				
+	    				
+	    				}
+	  		}
+	  	function checkAnswer(isCorrect) {
+    	            const result = document.getElementById('result');
+    	            if (isCorrect) {
+    	                result.textContent = "정답입니다!";
+    	                result.style.color = "green";
+    	            } else {
+    	                result.textContent = "틀렸습니다. 다시 시도해보세요!";
+    	                result.style.color = "red";
+    	            }
+    	        }
+    			
+    		});
+    
     </script>
 </body>
 </html>
