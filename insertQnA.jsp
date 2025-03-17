@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.sql.ResultSet"%>
@@ -14,10 +15,16 @@
 <%
    String id[] = request.getParameterValues("id_QnA");
    String questions[] = request.getParameterValues("Q");
-   String answers[] = request.getParameterValues("A");
+   String answers[]= new String[questions.length];
    
+   for(int i=0; i<questions.length;i++){
+	   String temp[] = request.getParameterValues("answer"+(i+1));
+	   answers[i] = temp[0];
+	   out.println(answers[i]);
+   }
 %>
 alert(<%=questions.length%>);
+
 <%
    Connection con = null;
    Statement stmt = null;
