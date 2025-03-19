@@ -130,9 +130,22 @@ function setQid(id){
 
 function delete_btn(id){
     let tr_QnA = document.querySelector("tr[name='tr_QnA"+id+"']");
+    
+    
+    delete_db(id);
+    
+    
     tr_QnA.remove();
     len--;
     setQid(id);
+    
+	location.href = "../db/deleteQnA.jsp?id="+id;
+    
+}
+
+function delete_db(id){
+	
+	
 }
             window.addEventListener(
                 "DOMContentLoaded", (event)=>{
