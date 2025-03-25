@@ -1,0 +1,253 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-1" value="Game UI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="275" y="40" width="100" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="aM9ryv3xv72pqoxQDRHE-1" vertex="1">
+          <mxGeometry x="45" y="70" width="10" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="aM9ryv3xv72pqoxQDRHE-1" vertex="1">
+          <mxGeometry x="50" y="80" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-22" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="aM9ryv3xv72pqoxQDRHE-1">
+          <mxGeometry x="50" y="170" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-34" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="aM9ryv3xv72pqoxQDRHE-1">
+          <mxGeometry x="50" y="260" width="10" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-5" value="GameController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="435" y="40" width="100" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="aM9ryv3xv72pqoxQDRHE-5" vertex="1">
+          <mxGeometry x="45" y="80" width="10" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-26" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="aM9ryv3xv72pqoxQDRHE-5">
+          <mxGeometry x="45" y="260" width="10" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-7" value="게임 목록 요청" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" target="aM9ryv3xv72pqoxQDRHE-2" edge="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="315" y="130" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="175" y="130" />
+            </Array>
+            <mxPoint x="305" y="130" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-8" value="return" style="html=1;verticalAlign=bottom;endArrow=none;dashed=1;endSize=8;elbow=vertical;rounded=0;edgeStyle=orthogonalEdgeStyle;endFill=0;startFill=0;" parent="1" edge="1">
+          <mxGeometry x="0.2939" y="20" relative="1" as="geometry">
+            <mxPoint x="645" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="675" y="350" />
+              <mxPoint x="645" y="350" />
+              <mxPoint x="645" y="330" />
+              <mxPoint x="675" y="330" />
+              <mxPoint x="675" y="380" />
+            </Array>
+            <mxPoint x="675" y="360" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="155" y="40" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-2" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="550" as="sourcePoint" />
+            <mxPoint x="169.5" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-6" value="GameDatabase" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="595" y="40" width="100" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="twneoGNv3_O5aftmhDCA-6">
+          <mxGeometry x="45" y="80" width="10" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-10" value="요청 전달" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="475" y="140" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="335" y="140" />
+            </Array>
+            <mxPoint x="480" y="140" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-11" value="게임 목록 조회" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="635" y="150" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="495" y="150" />
+            </Array>
+            <mxPoint x="640" y="150" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-12" value="게임 목록 반환" style="html=1;verticalAlign=bottom;endArrow=open;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0345" relative="1" as="geometry">
+            <mxPoint x="640" y="180" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="495" y="180" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-14" value="게임 목록 표시" style="html=1;verticalAlign=bottom;endArrow=open;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0345" relative="1" as="geometry">
+            <mxPoint x="480" y="189.5" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="335" y="189.5" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-15" value="게임 선택" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="315" y="220" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="175" y="220" />
+            </Array>
+            <mxPoint x="320" y="220" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-16" value="선택 전달" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="475" y="230" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="335" y="230" />
+            </Array>
+            <mxPoint x="480" y="230" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-17" value="게임 데이터 조회" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="635" y="240" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="495" y="240" />
+            </Array>
+            <mxPoint x="640" y="240" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-18" value="게임 데이터 반환" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0345" relative="1" as="geometry">
+            <mxPoint x="640" y="260" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="495" y="260" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-19" value="게임 시작 화면 표시" style="html=1;verticalAlign=bottom;endArrow=open;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endFill=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="0.0345" relative="1" as="geometry">
+            <mxPoint x="480" y="270" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="335" y="270" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-23" value="게임 시작 요청" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="315" y="310" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="175" y="310" />
+            </Array>
+            <mxPoint x="320" y="310" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-24" value="요청 전달" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="475" y="320" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="335" y="320" />
+            </Array>
+            <mxPoint x="480" y="320" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-27" value="게임 로직 실행" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="635" y="330" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="495" y="330" />
+            </Array>
+            <mxPoint x="640" y="330" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-28" value="Quiz 데이터 반환&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="640" y="350" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="495" y="350" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-29" value="Quiz 화면 표시" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="480" y="360" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="335" y="360" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-30" value="끝말잇기 데이터 반환" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="640" y="380" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="495" y="380" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-31" value="게임 진행기록 저장" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.4737" relative="1" as="geometry">
+            <mxPoint x="635" y="430" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="495" y="430" />
+            </Array>
+            <mxPoint x="640" y="430" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-32" value="끝말잇기 화면 표시" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="480" y="390" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="335" y="390" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-33" value="게임 참여" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="twneoGNv3_O5aftmhDCA-26">
+          <mxGeometry x="-0.0656" relative="1" as="geometry">
+            <mxPoint x="315" y="420" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="175" y="420" />
+            </Array>
+            <mxPoint x="475" y="420" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-35" value="게임 결과 반환" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="640" y="460" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="495" y="460" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="twneoGNv3_O5aftmhDCA-36" value="게임 결과 표시" style="html=1;verticalAlign=bottom;endArrow=openThin;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry x="0.0363" relative="1" as="geometry">
+            <mxPoint x="480" y="470" as="sourcePoint" />
+            <Array as="points" />
+            <mxPoint x="335" y="470" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
