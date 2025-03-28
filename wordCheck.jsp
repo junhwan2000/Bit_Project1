@@ -7,12 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="text" name="show_word" readonly>
+<div style="position:absolute; top:25%; left:10%;">
+<input type="text" name="show_word" readonly style="width:500px;height:300px;font-size:100px;text-align:center;">
+</div>
+<div style="position:absolute; top:25%; left:50%;">
+<input type="text" name="user_input" style="width:500px;height:300px;font-size:100px;text-align:center;">
+</div>
 <br>
-<input type="text" name="user_input">
-<br>
-<br>
-<div name="definition" border="1" style="width:400px; height:600px; border-style:solid">
+<div name="definition" border="1" style="position:absolute; top:60%; left:25%; width:600px; height:200px; font-size:20px; border-style:solid">
 </div>
 <script>
 
@@ -20,6 +22,8 @@ var div_def = document.querySelector("div[name='definition']");
 var num=0;
 var user_input = document.querySelector("input[name='user_input']");
 var view_word = null;
+var check_word = null;
+var pos = null;
 user_input.addEventListener("keydown",(event)=>{
   if(event.key=="Enter"){
      var str = user_input.value;  
@@ -33,6 +37,8 @@ user_input.addEventListener("keydown",(event)=>{
      }
      else if(user_input.value != null)
 	     check(user_input.value);
+     
+     user_input.value = "";
    }
 });
 
@@ -56,12 +62,17 @@ function check(word){
 	  .then((text)=>{
  
 		  total = text.slice(text.indexOf("<total>")+7,text.indexOf("</total>"));
+		  check_word = text.slice(text.indexOf("<word>")+6, text.indexOf("</word>"));
 	      def = text.slice(text.indexOf("<definition>")+12, text.indexOf("</definition>"));
+	      pos = text.slice(text.indexOf("<pos>")+5, text.indexOf("</pos>"));
 	      
-	      if(parseInt(total) > 0){
-	    	  div_def.textContent = total + "\n" + def;
-	    	  view_word = word;
-		      showUserInput(word);
+	      if(check_word == word && pos=="명사"){
+	          if(parseInt(total) > 0){
+	    	        // div_def.textContent = total + "\n" + def;
+	    	         div_def.textContent = def + "\n";
+	    	         view_word = word;
+		         showUserInput(word);
+	          }
 	      }
 	      else{
 	    	      div_def.textContent = word+"는(은) 없는 단어 입니다.\n";
@@ -74,7 +85,6 @@ function check(word){
 	    alert("오류");
 	  });
 }
-
 </script>
 </body>
 </html>
