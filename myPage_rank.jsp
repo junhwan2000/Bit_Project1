@@ -11,7 +11,8 @@
 <jsp:include page="mypageForm.jsp"/>
 
 
-  <div border="1" name="div_page" style="width:500px; height:300px; position: absolute; top:10%; left:50%; border-style:solid">
+<div border="1" name="div_page" 
+  style="position:absolute; transform: translate(280px,0px); width:500px; height:300px;">
   <jsp:include page="select_rank.jsp"/>
   </div>
 </body>
