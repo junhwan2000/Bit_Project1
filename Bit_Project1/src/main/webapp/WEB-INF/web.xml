@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>Bit_Project1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <!-- 실행할 Servlet -->
+  
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>servlet.HelloServlet</servlet-class>
+  </servlet>
+  
+  <!-- URL 설정 -->
+  
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <!-- http://localhost:8080/JSPEx/hello -->
+  
+  	<servlet>
+  		<servlet-name>PersonServlet</servlet-name>
+  		<servlet-class>servlet.PersonServlet</servlet-class>
+  	</servlet>
+  	
+	<servlet-mapping>	
+		<servlet-name>PersonServlet</servlet-name>
+  		<url-pattern>/person</url-pattern>
+	</servlet-mapping>  
+  <!-- http://localhost:8080/JSPEx/person -->
+  
+  <!-- application 내장객체에서 쓸 변수 -->
+  <context-param>
+  	<param-name>level</param-name>
+  	<param-value>5</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>debug</param-name>
+  	<param-value>INFO</param-value>
+  </context-param>
+  
+  
+  <!-- 에러 처리 -->
+  <error-page>
+  		<error-code> 404 </error-code>
+  		<location>/error/404code.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500code.jsp</location>
+  </error-page>
+  <error-page>
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<location>/error/nullpointer.jsp</location>
+  </error-page>
+  
+<!-- Connection Pool Setting -->
+<resource-ref>
+	<res-ref-name>jdbc/Quiz</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+</resource-ref> 
+
+<!-- Model2 -->
+<!-- localhost:8080/JSPEx/simple 처리한다.-->
+	<servlet>
+		<servlet-name>SimpleController</servlet-name>
+		<servlet-class>mvc.SimpleController</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/handler.properties</param-value>
+		</init-param>
+	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>SimpleController</servlet-name>
+  		<url-pattern>*.it</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 회원관리 / 게시판 MVC 적용 -->
+  	<servlet>
+  		<servlet-name>Controller</servlet-name>
+  		<servlet-class>control.Controller</servlet-class>
+  		<init-param>
+  			<param-name>configFile</param-name>
+  			<param-value>/WEB-INF/handler.properties</param-value>
+  		</init-param>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>Controller</servlet-name>
+  		<url-pattern>*.do</url-pattern>
+  	</servlet-mapping>
+  	<mime-mapping>
+    <extension>jpg</extension>
+    <mime-type>image/jpeg</mime-type>
+</mime-mapping>
+<mime-mapping>
+    <extension>png</extension>
+    <mime-type>image/png</mime-type>
+</mime-mapping>
+</web-app>
+
+
+
