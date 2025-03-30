@@ -31,17 +31,15 @@
       	// DB를 제거하고 다시 넣는게 오래 걸리긴 하지만 이렇게 넣었음
       	
       	
-        String id[] = request.getParameterValues("qid_QnA");
+        //String id[] = request.getParameterValues("qid_QnA");
         String questions[] = request.getParameterValues("Q");
-
         String answers[]= new String[questions.length];
-
+        String scores[] = request.getParameterValues("S");
         for(int i=0; i<questions.length;i++){
         	   String temp[] = request.getParameterValues("answer"+i);
         	   answers[i] = temp[0];
-        	   out.println(answers[i]);
         }
-      	
+       
       	
         String deleteSql = "DELETE FROM quizzes";
         stmt.executeUpdate(deleteSql);
@@ -49,7 +47,7 @@
         
         for(int i=0; i< questions.length; i++){
            String sql = "insert into quizzes(quiz_id, game_id, category_id, question, answer, score) "
-        		           +"values ("+(100+i)+", 1111, 0, '"+questions[i]+"', '"+answers[i]+"', 10)";
+        		           +"values ("+(100+i)+", 1111, 0, '"+questions[i]+"', '"+answers[i]+"',"+ Integer.parseInt(scores[i])+")";
            int result = stmt.executeUpdate(sql);
         
            if(result == 0){

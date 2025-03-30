@@ -54,6 +54,7 @@
 				<th> 문제 번호 </th>
 				<th> 문제 </th>
 				<th> 정답 </th>
+				<th> 점수 </th>
 				<th> 삭제 </th>
 			</tr>
 			<%
@@ -85,7 +86,10 @@
 		   
 					</td>
 					<td>
-				     <input type="button" value="삭제" name="btn_delete" id="<%=length%>" onclick="delete_btn(this.id)">
+				        <input type="number"  min="10" max="300" step="10" value="<%=rs.getString( "score" )%>" name="S">
+					</td>
+					<td>
+				        <input type="button" value="삭제" name="btn_delete" id="<%=length%>" onclick="delete_btn(this.id)">
 					</td>
 			    </tr>
 			
@@ -187,6 +191,19 @@ function delete_btn(id){
                     td_A.innerHTML += "<input type='radio' value='O' name='answer"+new_id+"' checked> O&nbsp;";
                     td_A.innerHTML += "<input type='radio' value='X' name='answer"+new_id+"'> X&nbsp;";
                     
+                    
+			       // <input type="number"  min="10" max="300" step="10" value="10" name="S">
+
+                    let td_S = document.createElement("td");
+                    let text_S = document.createElement("input");
+                    text_S.setAttribute("name","S");
+                    text_S.setAttribute("type","number");
+                    text_S.setAttribute("value","10");
+                    text_S.setAttribute("min","10");
+                    text_S.setAttribute("max","300");
+                    text_S.setAttribute("step","10");
+                    td_S.append(text_S);
+                    
                     let td_button = document.createElement("td");
                     let btn_delete = document.createElement("input");
                     btn_delete.setAttribute("name", "btn_delete");
@@ -199,6 +216,7 @@ function delete_btn(id){
                     tr_QnA.appendChild(td_num);
                     tr_QnA.appendChild(td_Q);
                     tr_QnA.appendChild(td_A);
+                    tr_QnA.appendChild(td_S);
                     tr_QnA.append(td_button);
                     table_QnA.appendChild(tr_QnA);
                     
@@ -207,19 +225,19 @@ function delete_btn(id){
                 });
             
             function modifyQnA() {
-
             	if(last_num==0){
                 	alert("문제를 하나 이상 입력해주세요.");
                     return; 
              }
             	    let formData = new URLSearchParams();
                 let questions = document.querySelectorAll('input[name="Q"]');
-                
+                let scores = document.querySelectorAll('input[name="S"]');
+
                 for(let i = 0; i < questions.length; i++) {
                     let qid = i;			// 인덱스라서 
                     let question = questions[i].value.trim();   
                     let answerInput = document.querySelector('input[name="answer' + qid + '"]:checked');
-
+                    let score = scores[i].value;
                     // 문제 여러개 추가할때 중간을 비워두고 추가하니까 값이 이상하게 들어가서 
                     // 문제를 빈칸없이 작성해야 들어가게 했슴
                     // 삭제를 누르고 설정을 완료해야 삭제가 되게 변경했슴.
@@ -232,6 +250,7 @@ function delete_btn(id){
 
                     formData.append("qid_QnA", qid);
                     formData.append("Q", question);
+                   formData.append("S", score);
                     formData.append("answer" + qid, answerInput.value);
                 }
 				// 여기도 삭제처럼 ajax로 보냄 
