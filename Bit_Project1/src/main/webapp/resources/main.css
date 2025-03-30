@@ -2,7 +2,6 @@
 /*member/main.jsp*/
 .container {
 	display: grid;
-	border: 1px solid blue;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 100px 550px repeat(1, 300px) 100px;
 	grid-column-gap: 10px;

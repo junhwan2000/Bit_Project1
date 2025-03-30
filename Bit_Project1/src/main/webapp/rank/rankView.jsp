@@ -1,10 +1,19 @@
-<%@page import="java.sql.SQLException"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuizWeb</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
  
 <%
     Connection con = null;
@@ -29,28 +38,42 @@
 			String sql = "null";
 			String game_id = "1111";
 			
-			sql = "select u.nickname, rank_score, record_time from ranks r, users u "+
+			sql = "select nickname, rank_score, record_time from ranks r, users u "+
 					"where r.game_id='"+game_id+"' and r.user_id=u.user_id "+ 
 					  "order by rank_score desc";
-			
+		
 			rs = stmt.executeQuery( sql );
 			%>
-			<table border=1>
-			<tr>
-			   <th>아이디</th>
-			   <th>점수</th>
-		    </tr>
-			<%
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">OX게임</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-dark">
+        <th>닉네임</th>
+        <th>점수</th>
+        <th>랭킹 기록 시간</th>
+      </tr>      
+      <%
+			String css[]={"table-danger","table-primary","table-warning","table-active","table-light"};
+            int i=0;
+			while(rs.next()){
 			
-			while(rs.next()){ %>
-			
-			   <tr>
-			      <td><%=rs.getString( "user_id" )%></td>
+			if(i<5){ %>
+			   <tr class=<%=css[i]%>>
+			   				<%i++;
+			   }
+			   else {%>
+				   <tr class=<%=css[4]%>>
+				   <%;} %>
+			      <td><%=rs.getString( "nickname" )%></td>
 			      <td><%=rs.getString( "rank_score" )%></td>
+			      <td><%=rs.getString( "record_time" )%></td>
 			   </tr>
 			
 			<%
-				
 			}
 		
 		} catch( SQLException e ) {
@@ -66,5 +89,11 @@
 			}
 			
 		}%>
-</table>
-   
+      
+     
+    </tbody>
+  </table>
+<!-- </div>-->
+
+</body>
+</html>
