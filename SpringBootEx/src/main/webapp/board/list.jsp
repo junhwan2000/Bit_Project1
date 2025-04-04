@@ -61,9 +61,6 @@
 					<fmt:formatDate type="both" value="${dto.reg_date}"
 						pattern="yyyy-MM-dd HH:mm"/>
 				</td>
-				<td style="text-align:center">
-					${dto.ip}
-				</td>
 			</tr>
 		</c:forEach>
 	</c:if>

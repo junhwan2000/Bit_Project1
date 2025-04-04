@@ -39,12 +39,6 @@
 			</td>
 		</tr>
 		<tr>
-			<th> ${str_passwd} </th>
-			<td>
-				<input class="input" type="password" name="passwd" maxlength="30">
-			</td>
-		</tr>
-		<tr>
 			<th colspan="2">
 				<input class="inputbutton" type="submit" value="${btn_write}">
 				<input class="inputbutton" type="reset" value="${btn_cancle}">

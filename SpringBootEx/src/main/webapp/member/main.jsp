@@ -53,7 +53,7 @@
 	    	
     	<c:if test="${memId ne null}">
 	    	<button type="button" class="btn btn-outline-dark" onclick="location='logonlogout'">로그아웃</button>
-			<button type="button" class="btn btn-outline-dark" onclick="location='logondelete'">마이페이지</button>
+			<button type="button" class="btn btn-outline-dark" onclick="location='logonpage'">마이페이지</button>
 			&nbsp;	
 		</c:if>
 	    	
@@ -87,8 +87,9 @@
 </c:if>
 		</div>
 		<div class="div5">
-			<span> 소식 </span>
-			
+		<a  href="boardlist">
+			<span > 소식 </span>
+		</a>
 		</div>
 		<div class="div6">
 			<tr>
