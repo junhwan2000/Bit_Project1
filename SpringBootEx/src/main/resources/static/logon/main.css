@@ -53,3 +53,17 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.logo-img {
+  width: 250px;         /* 적당한 크기 조절 */
+  max-width: 80%;       /* 반응형 지원 */
+  height: auto;         /* 가로 비율 유지 */
+  display: block;
+  margin: 0 auto;       /* 가운데 정렬 */
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+  width: 100px; /* 너비는 원하는 값으로 */
+}

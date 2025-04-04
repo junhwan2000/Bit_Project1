@@ -1,4 +1,4 @@
-let msg_writer = "작성자를 입력하세요";
+let msg_writer = "로그인 후에만 글 작성이 가능합니다.";
 let msg_subject = "글제목을 입력하세요";
 let msg_content = "글내용을 입력하세요";
 let msg_passwd = "비밀번호를 입력하세요";
@@ -19,15 +19,15 @@ window.addEventListener(
 			writeform.addEventListener(
 				"submit",
 				( event ) => {
-					let writer = document.querySelector( "input[name='writer']" );
+					let user_id = document.querySelector( "input[name='user_id']" );
 					let subject = document.querySelector( "input[name='subject']" );
 					let content = document.querySelector( "textarea[name='content']" );
 					let passwd = document.querySelector( "input[name='passwd']" );
 					let tag = /<[^>]*>/; 					
-					if( ! writer.value ) {
+					if( ! user_id.value ) {
 						alert( msg_writer );
 						event.preventDefault();
-						writer.focus();
+						user_id.focus();
 					} else if( ! subject.value ) {
 						alert( msg_subject );
 						event.preventDefault();

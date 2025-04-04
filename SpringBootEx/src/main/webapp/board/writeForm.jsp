@@ -3,8 +3,8 @@
 <%@ include file="setting.jsp" %>
 <link rel="stylesheet" type="text/css" href="${project}style_board.css">
 <script type="text/javascript" src="${project}script_board.js"></script>
-    
-<h2> ${page_write} </h2>
+
+<h2>${page_write}</h2>
 <br>
 
 <form name="writeform" method="post" action="boardwrite">
@@ -12,28 +12,27 @@
 	<input type="hidden" name="ref" value="${ref}">
 	<input type="hidden" name="re_step" value="${re_step}">
 	<input type="hidden" name="re_level" value="${re_level}">
+
 	<table>
 		<tr>
 			<th colspan="2" style="text-align: right;">
-				<a href="boardlist"> 
-					${str_list}&nbsp;&nbsp;&nbsp;
-				</a> 
+				<a href="boardlist">${str_list}&nbsp;&nbsp;&nbsp;</a>
 			</th>
 		</tr>
 		<tr>
-			<th> ${str_writer} </th>
-			<td> 
-				<input class="input" type="text" name="writer" maxlength="30" autofocus> 
+			<th>${str_writer}</th>
+			<td>
+				<input class="input" type="text" name="user_id" value="${sessionScope.memId}" readonly>
 			</td>
 		</tr>
 		<tr>
-			<th> ${str_subject} </th>
+			<th>${str_subject}</th>
 			<td>
 				<input class="input" type="text" name="subject" maxlength="100">
 			</td>
 		</tr>
 		<tr>
-			<th> ${str_content} </th>
+			<th>${str_content}</th>
 			<td>
 				<textarea name="content" rows="10" cols="40"></textarea>
 			</td>
@@ -47,11 +46,4 @@
 			</th>
 		</tr>
 	</table>
-</form>    
-			
-
-
-
-
-
-
+</form>

@@ -11,42 +11,48 @@ import org.springframework.web.bind.annotation.RequestParam;
 import board.BoardDBBean;
 import board.BoardDataBean;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping
 public class BoardModify {
-	
-	@Resource
-	private BoardDBBean boardDao;
 
-	@GetMapping( "/boardmodify" )
-	public String modifyForm( @RequestParam int num, @RequestParam String pageNum, 
-		Model model ) throws Exception {		
-		model.addAttribute( "num", num );
-		model.addAttribute( "pageNum", pageNum );
-		return "board/modifyForm";
-	}
-	
-	@PostMapping( "/boardmodify" )
-	public String modifyView( @RequestParam int num, @RequestParam String pageNum,
-		@RequestParam String passwd, Model model ) throws Exception {
-		int result = boardDao.check( num, passwd );	
-		model.addAttribute( "num", num );
-		model.addAttribute( "pageNum", pageNum );
-		model.addAttribute( "result", result );		
-		if( result == 1 ) {
-			BoardDataBean boardDto = boardDao.getArticle( num );
-			model.addAttribute( "boardDto", boardDto );
-		}		
-		return "board/modifyView";
-	}
-	
-	@PostMapping( "/boardmodifypro" )
-	public String process( @ModelAttribute BoardDataBean boardDto, 
-		@RequestParam String pageNum, Model model ) throws Exception {
-		int result = boardDao.modifyArticle( boardDto );
-		model.addAttribute( "result", result );
-		model.addAttribute( "pageNum", pageNum );		
-		return "board/modifyPro";
-	}	
+    @Resource
+    private BoardDBBean boardDao;
+
+    // 수정 화면 보여주기
+    @GetMapping("/boardmodify")
+    public String modifyForm(@RequestParam int num,
+                             @RequestParam String pageNum,
+                             HttpSession session,
+                             Model model) throws Exception {
+        String loginUserId = (String) session.getAttribute("memId");
+        BoardDataBean boardDto = boardDao.getArticle(num);
+
+        // 작성자 확인
+        if (!boardDto.getUser_id().equals(loginUserId)) {
+            model.addAttribute("result", -2);
+            model.addAttribute("pageNum", pageNum);
+            return "board/modifyPro";
+        }
+
+        model.addAttribute("boardDto", boardDto);
+        model.addAttribute("pageNum", pageNum);
+        return "board/modifyView";
+    }
+
+    // 수정 처리
+    @PostMapping("/boardmodifypro")
+    public String process(@ModelAttribute BoardDataBean boardDto,
+                          @RequestParam String pageNum,
+                          HttpSession session,
+                          Model model) throws Exception {
+        String loginUserId = (String) session.getAttribute("memId");
+
+        int result = boardDao.modifyArticle(boardDto, loginUserId);
+
+        model.addAttribute("result", result);
+        model.addAttribute("pageNum", pageNum);
+        return "board/modifyPro";
+    }
 }

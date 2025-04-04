@@ -2,51 +2,40 @@
     pageEncoding="UTF-8"%>
 <%@ include file="setting.jsp"%>
 <html>
-
 <head>
-<script type="text/javascript" src="${project}script_member.js"></script> 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="${project}mypage.css">
+  
+</head>
 
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 880px">
-    <a href="logonmain" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">메인페이지</span>
-    </a>
+<body>
+<div class="container-flex">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="logonmain" class="fs-4">메인페이지</a>
+    
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="logonmodify" class="nav-link active" aria-current="page" name="modify_btn">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href=""></use></svg>
-          회원정보수정
-        </a>
-      </li>
-      <li>
-        <a href="logondelete" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          회원탈퇴
-        </a>
-      </li>
-      <li>
-        <a href="myPage_rank.jsp" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          랭킹조회
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          1:1문의
-        </a>
-      </li>
-    <hr>
+      <li><a href="logonmodify" class="nav-link" onclick="loadPage(event, 'logonmodify')">회원정보수정</a></li>
+      <li><a href="logondelete" class="nav-link" onclick="loadPage(event, 'logondelete')">회원탈퇴</a></li>
+      <li><a href="logonrank" class="nav-link" onclick="loadPage(event, 'logonrank')">랭킹조회</a></li>
+      <li><a href="logoninquiry" class="nav-link" onclick="loadPage(event, 'logoninquiry')">1:1문의</a></li>
     </ul>
+  </div>
 
-</head>
-<body>
+  <div class="main-content" id="main-content">
+    <h2>환영합니다!</h2>
+    <p>왼쪽 메뉴를 선택해주세요.</p>
+  </div>
+</div>
+
 <script>
-
+  function loadPage(event, pageUrl) {
+    event.preventDefault(); // a 태그의 기본 이동 막기
+    $('#main-content').load(pageUrl); // AJAX로 오른쪽 영역에 로드
+  }
 </script>
 </body>
 </html>

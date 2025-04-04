@@ -16,33 +16,38 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping( "/boardwrite" )
+@RequestMapping("/boardwrite")
 public class BoardWrite {
 	@Resource
 	private BoardDBBean boardDao;
-	
+
+	// 글쓰기 폼
 	@GetMapping
-	public String writeForm( @RequestParam( defaultValue="0"  ) int num,
-		@RequestParam( defaultValue="1" ) int ref, 
-		@RequestParam( defaultValue="0"  ) int re_step,
-		@RequestParam( defaultValue="0" ) int re_level, Model model ) throws Exception {
-		model.addAttribute( "num", num );
-		model.addAttribute( "ref", ref );
-		model.addAttribute( "re_step", re_step );
-		model.addAttribute( "re_level", re_level );
+	public String writeForm(@RequestParam(defaultValue = "0") int num,
+	                        @RequestParam(defaultValue = "1") int ref,
+	                        @RequestParam(defaultValue = "0") int re_step,
+	                        @RequestParam(defaultValue = "0") int re_level,
+	                        Model model) throws Exception {
+		model.addAttribute("num", num);
+		model.addAttribute("ref", ref);
+		model.addAttribute("re_step", re_step);
+		model.addAttribute("re_level", re_level);
 		return "board/writeForm";
 	}
+
+	// 글쓰기 처리
 	@PostMapping
-	public String writePro( @ModelAttribute BoardDataBean boardDto, 
-			HttpServletRequest request, Model model ) 
-			throws Exception {		
-			// 작성일
-			boardDto.setReg_date( new Timestamp( System.currentTimeMillis() ) );
-			// IP
-			boardDto.setIp( request.getRemoteAddr() );		// IPv6	
-			int result = boardDao.insertArticle( boardDto );
-			model.addAttribute( "result", result );
-			
-			return "board/writePro";
-		}
+	public String writePro(@ModelAttribute BoardDataBean boardDto,
+	                       HttpServletRequest request, Model model) throws Exception {
+	    // 로그인된 사용자 ID 세션에서 가져오기
+	    String userId = (String) request.getSession().getAttribute("memId");
+	    boardDto.setUser_id(userId); // 자동 주입
+
+	    // 작성일 설정
+	    boardDto.setReg_date(new Timestamp(System.currentTimeMillis()));
+
+	    int result = boardDao.insertArticle(boardDto);
+	    model.addAttribute("result", result);
+	    return "board/writePro";
+	}
 }

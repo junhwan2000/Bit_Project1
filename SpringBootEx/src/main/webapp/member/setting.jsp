@@ -7,7 +7,7 @@
 
 <c:set var="project" value="/logon/"/>
 
-<c:set var="page_main" value="메 인 페 이 지"/>
+<c:set var="page_main" value="메인페이지"/>
 <c:set var="page_input" value="회 원 가 입"/>
 <c:set var="page_confirm" value="아이디 중복 확인"/>
 <c:set var="page_login" value="로 그 인"/>

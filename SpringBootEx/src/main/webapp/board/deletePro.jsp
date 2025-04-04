@@ -2,34 +2,30 @@
     pageEncoding="UTF-8"%>
 <%@ include file="setting.jsp" %>
 <script type="text/javascript" src="${project}script_board.js"></script>
-<h2> ${page_delete} </h2>
+<h2>${page_delete}</h2>
 
-<c:if test="${resultCheck eq -1}">
-	<script type="text/javascript">
-		alert( error_passwd );
-		history.back();
-	</script>	
-</c:if>		
-<c:if test="${resultCheck eq 1}">	
-	<c:if test="${result eq -1}">
+<c:choose>
+	<c:when test="${result eq -2}">
 		<script type="text/javascript">
-			alert( error_reply )
+			alert("작성자만 삭제할 수 있습니다.");
+			history.back();
+		</script>
+	</c:when>
+	<c:when test="${result eq -1}">
+		<script type="text/javascript">
+			alert(error_reply);
 		</script>
 		<meta http-equiv="refresh" content="0; url=boardlist?pageNum=${pageNum}">
-	</c:if>
-	<c:if test="${result eq 0}">
+	</c:when>
+
+	<c:when test="${result eq 0}">
 		<script type="text/javascript">
-			alert( error_delete )
+			alert(error_delete);
 		</script>
 		<meta http-equiv="refresh" content="0; url=boardlist?pageNum=${pageNum}">
-	</c:if>
-	<c:if test="${result eq 1}">	
-		<c:redirect url="boardlist?pageNum=${pageNum}"/>			
-	</c:if>			
-</c:if>
+	</c:when>
 
-
-
-
-
-
+	<c:when test="${result eq 1}">
+		<c:redirect url="boardlist?pageNum=${pageNum}" />
+	</c:when>
+</c:choose>
