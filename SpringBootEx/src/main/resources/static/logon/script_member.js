@@ -3,6 +3,7 @@ let msg_user_id = "아이디를 입력하세요";
 let msg_passwd = "비밀번호를 입력하세요";
 let msg_repasswd = "비밀번호가 일치해야 합니다";
 let msg_nickname = "이름을 입력하세요";
+let msg_email = "이메일을 입력하세요";
 let msg_confirm_user_id = "중복된 아이디 입니다.";
 let msg_confirm_nickname = "중복된 닉네임 입니다.";
 let msg_confirm_email = "중복된 이메일 입니다.";
@@ -75,38 +76,6 @@ window.addEventListener(
 								event.preventDefault();
 							}								
 						}	 
-						
-						let tel1 = document.querySelector( "input[name='tel1']" );
-						let tel2 = document.querySelector( "input[name='tel2']" );
-						let tel3 = document.querySelector( "input[name='tel3']" );
-						if( tel1.value || tel2.value || tel3.value ) {
-							if( tel1.value.length < 3 
-								|| tel2.value.length < 3 
-								|| tel3.value.length < 4 ) {
-								alert( msg_tel );
-								event.preventDefault();			
-							}	
-							tel1.focus();						
-						} 					
-						
-						let email1 = document.querySelector( "input[name='email1']" );
-						let email2 = document.querySelector( "select[name='email2']" );
-						if( email1.value ) {
-							if( email2.value == "1" ) {
-								// 직접입력
-								if( email1.value.indexOf( "@" ) == -1 ) {
-									alert( msg_email );
-									event.preventDefault();
-								}
-							} else {
-								// 선택입력
-								if( email1.value.indexOf( "@" ) != -1 ) {
-									alert( msg_email );
-									event.preventDefault();
-								}
-							}	
-							email1.focus();						
-						} // 이메일을 입력했을 때
 										
 					} // 아이디 / 비밀번호가 있으면 
 				} // submit 이벤트 핸들러

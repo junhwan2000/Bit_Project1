@@ -7,7 +7,7 @@
 
 <c:if test="${result eq 0}">   
 	<script type="text/javascript">
-		erroralert(error_id);
+		erroralert(error_user_id);
 	</script>
 </c:if>
 <c:if test="${result eq -1}">
