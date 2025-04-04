@@ -61,10 +61,9 @@ public class LogonDBBean {
 	public int modifyMember( LogonDataBean logonDto ) {
 		return logonMapper.modifyMember( logonDto );		
 	}
-	
-} // class
+	// class
 
-
+}
 
 
 

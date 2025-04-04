@@ -23,12 +23,11 @@
 <c:set var="msg_passwd" value="비밀번호를 다시 확인해 주세요"/>
 <c:set var="msg_modify" value="수정할 정보를 입력하세요"/>
 
-<c:set var="str_id" value="아이디"/>
+<c:set var="str_user_id" value="아이디"/>
 <c:set var="str_passwd" value="비밀번호"/>
-<c:set var="str_name" value="이름"/>
-<c:set var="str_tel" value="전화번호"/>
+<c:set var="str_nickname" value="닉네임"/>
 <c:set var="str_email" value="이메일"/>
-<c:set var="str_reg_date" value="가입일자"/>
+<c:set var="str_created_at" value="가입일자"/>
 
 <c:set var="btn_login" value="로그인"/>
 <c:set var="btn_ok" value="확인"/>

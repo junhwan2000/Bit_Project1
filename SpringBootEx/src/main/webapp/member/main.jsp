@@ -53,7 +53,7 @@
 	    	
     	<c:if test="${memId ne null}">
 	    	<button type="button" class="btn btn-outline-dark" onclick="location='logonlogout'">로그아웃</button>
-			<button type="button" class="btn btn-outline-dark" onclick="location='mypageForm.jsp'">마이페이지</button>
+			<button type="button" class="btn btn-outline-dark" onclick="location='logondelete'">마이페이지</button>
 			&nbsp;	
 		</c:if>
 	    	
