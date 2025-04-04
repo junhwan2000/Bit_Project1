@@ -1,87 +1,112 @@
-/*    */
+@charset "UTF-8";
 
-h1,h2,h3,h4,h5,h6
-{
-	color: #4C4C4C;	
-}
-a {
-	text-decoration: none;
-	font-size:12px;
-	color : #001A7F;	
-}
-a:hover {
-	text-decoration: none;
-	color : white;
-	font-weight: bold;
-}
-body
-{
-	text-align: center;
-	background-color : #F8F8FF;
-	font-size:11px;
-	font-family:verdana;
-	color: #696969;
-	padding:4px;
-}
-table {	
-	text-align: left;
-	border: 3px solid #487BE1;
-	background-color: #E6FFFF;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size:12px;
-	margin: auto;
+body {
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
 }
 
-table input{	
-	color: black;	
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-textarea {	
-	background-color: #E8FFFF;
-	border: 1px solid #6A84B7;
-}
-
-.input {
-	background-color: #E8FFFF;
-	border: 1px solid #6A84B7;
-	width: 150px;
-}
-.inputbutton {
-	background-color: #D6F0FF; 
-	border: 3px solid #6A84B7;
-	font-size:12px;
-	font-weight: bold;
-	color: #0100FF;
-	width: 80px;  
-	height: 25px;  
- 	text-align: center;  
+th, td {
+    border: 2px solid #89CFF0;
+    padding: 10px;
+    text-align: center;
 }
 
 th {
-	text-align: center;
-	background-color: #B2CCFF;
-	color : #36589C;
-	font-size : 11px;
-	border : 1px solid #487BE1;	
-	margin : 0px;
-	padding : 3px;
-	height: 30px;
-	width: 100px;
-}
-td {
-	background-color: #D6F0FF; 
-	color : #36648B;
-	font-size : 11px;
-	border : 1px solid gray;	
-	margin : 0px;
-	padding : 3px;
-	height: 30px;
-	width: 300px;
-}
-span {
-	color : #36648B;
-	font-size : 1.2em;	
+    background-color: #B9D9EB;
+    color: white;
 }
 
+/* 입력 필드 스타일 */
+input, select, textarea {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #89CFF0;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFF;
+    color: #333;
+}
 
+input:focus, textarea:focus {
+    border-color: #87CEFA;
+    outline: none;
+}
 
+/* 버튼 스타일 */
+button, input[type="submit"], input[type="reset"], input[type="button"] {
+    background-color: #B9D9EB;
+    border: 2px solid #89CFF0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button, input[type="submit"], input[type="reset"], input[type="button"] {
+    background-color: #B9D9EB;
+    border: 2px solid #89CFF0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+    background-color: #87CEFA;
+}
+
+button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+/* 링크 스타일 */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* 검색 바 스타일 */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 50%;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.search-bar button {
+    border-radius: 0 5px 5px 0;
+}
+.center-content {
+    text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

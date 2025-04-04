@@ -6,14 +6,20 @@
 <%@ include file="setting.jsp" %>
 <link rel="stylesheet" type="text/css" href="${project}style_board.css">
 <script type="text/javascript" src="${project}script_board.js"></script>
-<h2> ${page_list} ( ${str_count} : ${count} ) </h2>
+<h2> 공지사항 </h2>
 <br>
 <table>
 	<tr>
-		<td colspan="6" style="text-align:right;"> 
-			<a href="boardwrite">
-				${str_write}&nbsp;&nbsp;&nbsp;
-			</a> 
+		<td colspan="6" class="input center-content"> 
+		   <div class="search-container">
+	            <input type="text" name="query" placeholder="검색어를 입력해주세요" style="width:40%" required>
+	            <button type="submit">검색</button>
+	          <button class="button" onclick="location.href='boardwrite'">
+				    ${str_write}
+				</button>
+				<button class="button" onclick="location.href='logonmain'">
+				   메인페이지
+				</button>
 		</td>
 	</tr>
 	<tr>

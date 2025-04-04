@@ -87,7 +87,7 @@
 </c:if>
 		</div>
 		<div class="div5">
-		<a  href="boardlist">
+		<a href="boardlist">
 			<span > 소식 </span>
 		</a>
 		</div>
