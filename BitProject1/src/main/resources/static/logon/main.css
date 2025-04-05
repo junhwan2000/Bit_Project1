@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.container {
+	display: grid;
+	border: 1px solid blue;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 100px 550px repeat(1, 300px) 100px;
+	grid-column-gap: 10px;
+	grid-row-gap: 5px;
+	grid-template-areas:
+		"a a a a a a"
+		"b b c c d d"
+		"e e e f f f"
+		"g g g g g g";
+}
+
+.container div {
+	border: 1px solid gray;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.div1 { grid-area: a; }
+.div2 { grid-area: b; }
+.div3 { grid-area: c; }
+.div4 { grid-area: d;  display: flex; justify-content: center; }
+.div5 { grid-area: e; }
+.div6 { grid-area: f; }
+.div7 { grid-area: g; }
+
+.div4 button {
+  font-size: 20px;  /* 글자 크기 */
+  padding: 15px 30px;  /* 안쪽 여백 (버튼 크기 확대) */
+  width: 280px; /* 버튼 너비 */
+  height: 280px; /* 버튼 높이 */
+}
+
+
+.image {
+	width: 100%;
+	height: 80%;
+	object-fit: contain;
+	opacity: 0.8;
+}
+
+.home {
+	background-color: lightgray;
+	text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  width: 250px;         /* 적당한 크기 조절 */
+  max-width: 80%;       /* 반응형 지원 */
+  height: auto;         /* 가로 비율 유지 */
+  display: block;
+  margin: 0 auto;       /* 가운데 정렬 */
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+  width: 100px; /* 너비는 원하는 값으로 */
+}

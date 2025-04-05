@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="logon.LogonMapper">
+ 	<insert id="insertMember" parameterType="logon.LogonDataBean">
+ 		insert into member values( 
+ 		#{userId}, #{passwd}, #{nickname}, 
+ 		#{email, jdbcType=VARCHAR}, #{createdAt} )	
+ 	</insert>
+ 	
+ 	<select id="check" parameterType="String" resultType="int">
+ 		select count(*) from member where user_id=#{userId}
+ 	</select>
+ 	
+ 	<delete id="deleteMember" parameterType="String">
+ 		delete from member where user_id=#{userId}
+ 	</delete>
+ 	
+ 	<select id="getMember" parameterType="String" resultType="logon.LogonDataBean">
+ 		select * from member where user_id=#{userId}	
+ 	</select>
+ 	
+ 	<update id="modifyMember" parameterType="logon.LogonDataBean">
+ 		update member set passwd=#{passwd}, #{nickname}, 
+ 		#{email, jdbcType=VARCHAR}, #{createdAt}
+ 		where user_id=#{userId}
+ 	</update>
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
