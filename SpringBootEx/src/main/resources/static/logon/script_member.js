@@ -155,34 +155,7 @@ window.addEventListener(
 						alert( msg_repasswd );
 						event.preventDefault();
 						passwd.focus();
-					} else {
-						// 아이디 비밀번호가 입력된 경우
-						let tel1 = document.querySelector( "input[name='tel1']" );
-						let tel2 = document.querySelector( "input[name='tel2']" );
-						let tel3 = document.querySelector( "input[name='tel3']" );
-						if( tel1.value || tel2.value || tel3.value ) {
-							if( tel1.value.length < 3 
-								|| tel2.value.length < 3 
-								|| tel3.value.length < 4 ) {
-									alert( msg_tel );
-									event.preventDefault();
-									tel1.focus();
-								}	
-						}
-						
-						let email1 = document.querySelector( "input[name='email1']" );
-						let email2 = document.querySelector( "input[name='email2']" );
-						if( email1.value || email2.value ) {
-							if( ! email1.value || ! email2.value 
-								|| email1.value.indexOf( "@" ) != -1 
-								|| email2.value.indexOf( "@" ) != -1
-							) {
-								alert( msg_email );
-								event.preventDefault();
-								email1.focus();
-							}	
-						}							
-					}						
+					} 					
 				}							
 			);	
 		}

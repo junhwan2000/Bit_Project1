@@ -96,9 +96,9 @@
 		</a>
 		</div>
 		<div class="div6">
-			<tr>
-				<td> 1:1게시판 </td>
-			</tr>
+			<a href="qnalist">
+				<span > 1대1 게시판 </span>
+			</a>
 		</div>
 		<div class="div7">
 		</div>
