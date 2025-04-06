@@ -1,60 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="setting.jsp" %>
-<link rel="stylesheet" type="text/css" href="${project}style_qna.css">
+<link rel="stylesheet" type="text/css" href="${project}qnaform.css">
 <script type="text/javascript" src="${project}script_qna.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<head>
+    <meta charset="UTF-8">
+    <title>1:1 문의하기</title>
+    
+</head>
+<body>
 
 
-<h2>${page_write}</h2>
-<br>
+    <div class="qna-container">
+        <h1 class="qna-title">1:1 문의하기</h1>
 
-<form name="writeform" method="post" action="qnawrite">
-	<input type="hidden" name="num" value="${num}">
-	<input type="hidden" name="ref" value="${ref}">
-	<input type="hidden" name="re_step" value="${re_step}">
-	<input type="hidden" name="re_level" value="${re_level}">
+        <form action="qnawrite" method="post" enctype="multipart/form-data" class="qna-form">
 
-	<table>
-		<tr>
-			<th colspan="2" style="text-align: right;">
-				<a href="qnalist">${str_list}&nbsp;&nbsp;&nbsp;</a>
-			</th>
-		</tr>
-		<tr>
-			<th>${str_writer}</th>
-			<td>
-				<input class="input" type="text" name="user_id" value="${sessionScope.memId}" readonly>
-			</td>
-		</tr>
-		<tr>
-		    <th>${str_subject}</th>
-		    <td>
-		        <c:choose>
-		            <c:when test="${not empty param.subject}">
-		                <input class="input" type="text" name="subject" maxlength="100" 
-		                       value="re: ${fn:escapeXml(param.subject)}" readonly>
-		            </c:when>
-		            <c:otherwise>
-		                <input class="input" type="text" name="subject" maxlength="100">
-		            </c:otherwise>
-		        </c:choose>
-		    </td>
-		</tr>
-		<tr>
-			<th>${str_content}</th>
-			<td>
-				<textarea name="content" rows="10" cols="40"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th colspan="2">
-				<input class="inputbutton" type="submit" value="${btn_write}">
-				<input class="inputbutton" type="reset" value="${btn_cancle}">
-				<input class="inputbutton" type="button" value="${btn_list}"
-					onclick="location='qnalist'">
-			</th>
-		</tr>
-	</table>
-</form>
+            <div class="form-group">
+                <label for="name">${str_writer}</label>
+                <input type="text" id="name" name="user_id" value="${sessionScope.memId}" readonly required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">문의 내용*</label>
+                <input type="text" id="title" name="subject" placeholder="제목을 입력해주세요" required>
+            </div>
+
+            <div class="form-group">
+                <textarea id="content" name="content" placeholder="문의 내용을 자세히 입력해주세요"
+                          rows="5" maxlength="5000" oninput="updateCounter()" required></textarea>
+                <div class="char-counter">
+                    <span id="charCount">0</span>/5000
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="file">첨부 파일</label>
+                <input type="file" id="file" name="file" placeholder="파일을 등록해주세요">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">문의하기</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function updateCounter() {
+            var content = document.getElementById("content");
+            var charCount = document.getElementById("charCount");
+            charCount.textContent = content.value.length;
+        }
+    </script>
+</body>
+</html>

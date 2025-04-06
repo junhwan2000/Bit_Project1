@@ -21,7 +21,7 @@
       <li><a href="logonmodify" class="nav-link" onclick="loadPage(event, 'logonmodify')">회원정보수정</a></li>
       <li><a href="logondelete" class="nav-link" onclick="loadPage(event, 'logondelete')">회원탈퇴</a></li>
       <li><a href="logonrank" class="nav-link" onclick="loadPage(event, 'logonrank')">랭킹조회</a></li>
-      <li><a href="logoninquiry" class="nav-link" onclick="loadPage(event, 'logoninquiry')">1:1문의</a></li>
+      <li><a href="logoninquiry" class="nav-link" onclick="loadPage(event, 'qnawrite')">1:1문의</a></li>
     </ul>
   </div>
 

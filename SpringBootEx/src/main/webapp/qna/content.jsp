@@ -36,7 +36,7 @@
 			<input class="inputbutton" type="button" value="${btn_delete}"
 				onclick="location='qnadelete?num=${num}&pageNum=${pageNum}'">
 			<input class="inputbutton" type="button" value="${btn_reply}"
-				onclick="location='qnawrite?num=${qnaDto.num}&ref=${qnaDto.ref}&re_step=${qnaDto.re_step}&re_level=${qnaDto.re_level}&subject=${qnaDto.subject}'">
+				onclick="location='qnareply?num=${qnaDto.num}&ref=${qnaDto.ref}&re_step=${qnaDto.re_step}&re_level=${qnaDto.re_level}&subject=${qnaDto.subject}'">
 			<input class="inputbutton" type="button" value="${btn_list}"
 				onclick="location='qnalist?pageNum=${pageNum}'">
 

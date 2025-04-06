@@ -15,7 +15,6 @@
 			<div class="search-container">
 				<input type="text" name="query" placeholder="검색어를 입력해주세요" style="width:40%" required>
 				<button type="submit">검색</button>
-				<button class="button" onclick="location.href='qnawrite'">${str_write}</button>
 				<button class="button" onclick="location.href='logonmain'">메인페이지</button>
 			</div>
 		</td>
