@@ -42,6 +42,21 @@
 		WHERE rnum &gt;= #{start}
 	</select>
 
+	<!-- 자기 글 보기 -->
+		<select id="getMyArticles" parameterType="java.util.Map" resultType="board.BoardDataBean">
+			SELECT * FROM (
+				SELECT ROWNUM rnum, A.* FROM (
+					SELECT num, user_id, subject, reg_date, readcount, ref, re_step, re_level, content
+					FROM notices
+					WHERE user_id = #{user_id}
+					ORDER BY ref DESC, re_step ASC
+				) A
+				WHERE ROWNUM &lt;= #{end}
+			)
+			WHERE rnum &gt;= #{start}
+		</select>
+
+
 	<!-- 글 상세 보기 -->
 	<select id="getArticle" parameterType="int" resultType="board.BoardDataBean">
 		SELECT num, user_id, subject, reg_date, readcount, ref, re_step, re_level, content

@@ -44,6 +44,10 @@ public class BoardDBBean {
 	public List<BoardDataBean> getArticles(Map<String, Integer> map) {
 		return boardMapper.getArticles(map);
 	}
+	public List<BoardDataBean> getMyArticles(Map<String, Integer> map) {
+		return boardMapper.getMyArticles(map);
+	}
+	
 
 	public BoardDataBean getArticle(int num) {
 		return boardMapper.getArticle(num);

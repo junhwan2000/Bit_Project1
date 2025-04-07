@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
     <div class="qna-container">
         <h1 class="qna-title">1:1 문의하기</h1>
 
@@ -47,12 +46,5 @@
         </form>
     </div>
 
-    <script>
-        function updateCounter() {
-            var content = document.getElementById("content");
-            var charCount = document.getElementById("charCount");
-            charCount.textContent = content.value.length;
-        }
-    </script>
 </body>
 </html>

@@ -10,6 +10,17 @@ let error_modify = "글수정에 실패했습니다\n잠시 후 다시 시도하
 let error_delete = "글삭제에 실패했습니다\n잠시 후 다시 시도하세요";
 let error_reply = "답글이 있는 글은 삭제할 수 없습니다";
 
+
+function updateCounter() {
+    var content = document.getElementById("content");
+    var charCount = document.getElementById("charCount");
+    charCount.textContent = content.value.length;
+}
+function loadPage(event, pageUrl) {
+  event.preventDefault(); // a 태그의 기본 이동 막기
+  $('#main-content').load(pageUrl); // AJAX로 오른쪽 영역에 로드
+}
+
 window.addEventListener(
 	"DOMContentLoaded",
 	() => {

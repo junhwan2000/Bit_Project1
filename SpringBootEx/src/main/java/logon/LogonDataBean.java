@@ -16,6 +16,7 @@ public class LogonDataBean {
 	private String nickname;
 	private String email;
 	private Timestamp created_at;
+	private String auth;
 }
 
 
